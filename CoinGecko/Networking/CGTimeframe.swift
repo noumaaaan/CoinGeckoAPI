@@ -1,6 +1,6 @@
 import Foundation
 
-enum TimeframeChange: CaseIterable {
+enum CGTimeframe: CaseIterable {
     case oneHour
     case oneDay
     case oneWeek

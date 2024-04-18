@@ -1,9 +1,9 @@
 import Foundation
 
-class CoinListViewModel: ObservableObject {
+final class CoinListViewModel: ObservableObject {
     @Published var coins: [CGCoin] = []
     @Published var error: Error?
-    @Published var selectedTimeframe: TimeframeChange = .oneDay
+    @Published var selectedTimeframe: CGTimeframe = .oneDay
     
     var sorting: CGSort = .marketCapDesc
     var apiService = APIService()
@@ -12,7 +12,7 @@ class CoinListViewModel: ObservableObject {
     func loadData() {
         Task {
             do {
-                let coins = try await apiService.fetchMarketCoins(sorting: sorting)
+                let coins = try await apiService.fetchMarketCoins()
                 self.coins.append(contentsOf: coins)
             } catch {
                 self.error = error
@@ -23,7 +23,7 @@ class CoinListViewModel: ObservableObject {
     @MainActor
     func refreshCoinsList() {
         self.coins.removeAll()
-        apiService.page = 0
+        apiService.coinsPage = 0
         loadData()
     }
     

@@ -15,7 +15,7 @@ struct CoinView: View {
         }
     }
     let coin: CGCoin
-    let timeframe: TimeframeChange
+    let timeframe: CGTimeframe
         
     var body: some View {
         GroupBox {

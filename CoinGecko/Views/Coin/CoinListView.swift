@@ -41,7 +41,7 @@ struct CoinListView: View {
 extension CoinListView {
     var segmentedPicker: some View {
         Picker("Timeframe", selection: $viewModel.selectedTimeframe) {
-            ForEach(TimeframeChange.allCases, id: \.self) { option in
+            ForEach(CGTimeframe.allCases, id: \.self) { option in
                 Text(option.label)
             }
         }

@@ -14,7 +14,7 @@ struct CGTabView: View {
                     Label("Coins", systemImage: "sterlingsign.arrow.circlepath")
                 }
             
-            CategoriesListView()
+            CategoriyListView()
                 .tabItem {
                     Label("Categories", systemImage: "list.bullet.rectangle")
                 }
@@ -22,6 +22,11 @@ struct CGTabView: View {
             ExchangesListView()
                 .tabItem {
                     Label("Exchanges", systemImage: "creditcard")
+                }
+            
+            AboutView()
+                .tabItem {
+                    Label("About", systemImage: "person.circle")
                 }
         }
     }

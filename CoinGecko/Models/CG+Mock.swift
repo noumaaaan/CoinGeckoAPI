@@ -1,6 +1,8 @@
 import Foundation
 
 struct CGCoinMock {
+    
+    // CGCoin
     let bitcoin: CGCoin = .init(
         id: "bitcoin",
         symbol: "btc",
@@ -31,5 +33,21 @@ struct CGCoinMock {
         priceChangePercentage24hInCurrency: -4.230150975928614,
         priceChangePercentage30dInCurrency: -7.308455021089008,
         priceChangePercentage7dhInCurrency: -12.42590822411875
+    )
+    
+    // CGCategory
+    let layer1: CGCategory = .init(
+        id: "layer-1",
+        name: "Layer 1 (L1)",
+        marketCap: 1894596925167.8267,
+        marketCapChange24H: -0.3413211493105112,
+        content: "",
+        top3_Coins: [
+            "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1696501400",
+            "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1696501628",
+            "https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png?1696501970"
+        ],
+        volume24H: 66225564581.36339,
+        updatedAt: "2024-04-18T20:05:46.971Z"
     )
 }
