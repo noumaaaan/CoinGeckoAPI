@@ -26,8 +26,11 @@
 		8CF802192BD0B83000EC8586 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802182BD0B83000EC8586 /* LogoView.swift */; };
 		8CF8021C2BD0B96000EC8586 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8021B2BD0B96000EC8586 /* Double.swift */; };
 		8CF8021E2BD0C03B00EC8586 /* CGTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8021D2BD0C03B00EC8586 /* CGTabView.swift */; };
-		8CF802202BD0C04600EC8586 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8021F2BD0C04600EC8586 /* AboutView.swift */; };
 		8CF802222BD0CB2700EC8586 /* TimeframeChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802212BD0CB2700EC8586 /* TimeframeChange.swift */; };
+		8CF802272BD0DF1F00EC8586 /* CategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802262BD0DF1F00EC8586 /* CategoriesListView.swift */; };
+		8CF802292BD0DF2800EC8586 /* ExchangesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802282BD0DF2800EC8586 /* ExchangesListView.swift */; };
+		8CF8022B2BD0DFCB00EC8586 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8022A2BD0DFCB00EC8586 /* TrendingListView.swift */; };
+		8CF8022D2BD0E32000EC8586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF8022C2BD0E32000EC8586 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +73,11 @@
 		8CF802182BD0B83000EC8586 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		8CF8021B2BD0B96000EC8586 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		8CF8021D2BD0C03B00EC8586 /* CGTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTabView.swift; sourceTree = "<group>"; };
-		8CF8021F2BD0C04600EC8586 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		8CF802212BD0CB2700EC8586 /* TimeframeChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeframeChange.swift; sourceTree = "<group>"; };
+		8CF802262BD0DF1F00EC8586 /* CategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListView.swift; sourceTree = "<group>"; };
+		8CF802282BD0DF2800EC8586 /* ExchangesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesListView.swift; sourceTree = "<group>"; };
+		8CF8022A2BD0DFCB00EC8586 /* TrendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListView.swift; sourceTree = "<group>"; };
+		8CF8022C2BD0E32000EC8586 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF801D52BCB822700EC8586 /* CoinGeckoApp.swift */,
+				8CF8022C2BD0E32000EC8586 /* LaunchScreen.storyboard */,
 				8CF8021A2BD0B94D00EC8586 /* Extensions */,
 				8CF802092BCB852A00EC8586 /* Assets */,
 				8CF802082BCB851800EC8586 /* ViewModels */,
@@ -171,11 +178,12 @@
 		8CF802062BCB84F500EC8586 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CF802232BD0DD6300EC8586 /* Components */,
 				8CF801D72BCB822700EC8586 /* CoinListView.swift */,
 				8CF8021D2BD0C03B00EC8586 /* CGTabView.swift */,
-				8CF8021F2BD0C04600EC8586 /* AboutView.swift */,
-				8CF8020A2BCB856600EC8586 /* CoinView.swift */,
-				8CF802182BD0B83000EC8586 /* LogoView.swift */,
+				8CF8022A2BD0DFCB00EC8586 /* TrendingListView.swift */,
+				8CF802262BD0DF1F00EC8586 /* CategoriesListView.swift */,
+				8CF802282BD0DF2800EC8586 /* ExchangesListView.swift */,
 				8CF802162BD0B05200EC8586 /* CoinDetailView.swift */,
 			);
 			path = Views;
@@ -215,6 +223,15 @@
 				8CF8021B2BD0B96000EC8586 /* Double.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8CF802232BD0DD6300EC8586 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8CF802182BD0B83000EC8586 /* LogoView.swift */,
+				8CF8020A2BCB856600EC8586 /* CoinView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF8022D2BD0E32000EC8586 /* LaunchScreen.storyboard in Resources */,
 				8CF801DD2BCB822900EC8586 /* Preview Assets.xcassets in Resources */,
 				8CF801DA2BCB822900EC8586 /* Assets.xcassets in Resources */,
 			);
@@ -347,12 +365,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF802272BD0DF1F00EC8586 /* CategoriesListView.swift in Sources */,
+				8CF802292BD0DF2800EC8586 /* ExchangesListView.swift in Sources */,
 				8CF802222BD0CB2700EC8586 /* TimeframeChange.swift in Sources */,
+				8CF8022B2BD0DFCB00EC8586 /* TrendingListView.swift in Sources */,
 				8CF8020D2BCB859F00EC8586 /* CGCoin+Mock.swift in Sources */,
 				8CF802192BD0B83000EC8586 /* LogoView.swift in Sources */,
 				8CF8020B2BCB856600EC8586 /* CoinView.swift in Sources */,
 				8CF802172BD0B05200EC8586 /* CoinDetailView.swift in Sources */,
-				8CF802202BD0C04600EC8586 /* AboutView.swift in Sources */,
 				8CF8021E2BD0C03B00EC8586 /* CGTabView.swift in Sources */,
 				8CF8021C2BD0B96000EC8586 /* Double.swift in Sources */,
 				8CF801D82BCB822700EC8586 /* CoinListView.swift in Sources */,
@@ -529,11 +549,17 @@
 				DEVELOPMENT_TEAM = D949FXATB8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CoinGeckoAPI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,9 +567,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nouman.CoinGecko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -558,11 +588,17 @@
 				DEVELOPMENT_TEAM = D949FXATB8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CoinGeckoAPI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,9 +606,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nouman.CoinGecko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

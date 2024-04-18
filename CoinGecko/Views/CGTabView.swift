@@ -4,14 +4,24 @@ struct CGTabView: View {
     
     var body: some View {
         TabView {
+            TrendingListView()
+                .tabItem {
+                    Label("Trending", systemImage: "chart.xyaxis.line")
+                }
+            
             CoinListView()
                 .tabItem {
                     Label("Coins", systemImage: "sterlingsign.arrow.circlepath")
                 }
             
-            AboutView()
+            CategoriesListView()
                 .tabItem {
-                    Label("Coins", systemImage: "gear")
+                    Label("Categories", systemImage: "list.bullet.rectangle")
+                }
+            
+            ExchangesListView()
+                .tabItem {
+                    Label("Exchanges", systemImage: "creditcard")
                 }
         }
     }
