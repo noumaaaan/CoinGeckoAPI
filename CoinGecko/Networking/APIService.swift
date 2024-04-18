@@ -9,7 +9,7 @@ class APIService {
     func fetchMarketCoins(sorting: CGSort = .marketCapDesc) async throws -> [CGCoin] {
         page += 1
         
-        let urlString = "\(baseURL)coinsds/markets?vs_curresdncy=GBP&price_change_percentage=1h%2C24h%2C7d%2C30d&per_page=\(itemsPerPage)&page=\(page)?x_cg_demo_api_key=\(Configuration().apiKey)"
+        let urlString = "\(baseURL)coins/markets?vs_currency=GBP&price_change_percentage=1h%2C24h%2C7d%2C30d&per_page=\(itemsPerPage)&page=\(page)?x_cg_demo_api_key=\(Configuration().apiKey)"
         print(urlString)
         print(page)
         
