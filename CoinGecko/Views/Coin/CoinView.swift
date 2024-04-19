@@ -78,5 +78,5 @@ extension CoinView {
 }
 
 #Preview {
-    CoinView(coin: CGCoinMock().bitcoin, timeframe: .oneDay)
+    CoinView(coin: CGMock().bitcoin, timeframe: .oneDay)
 }

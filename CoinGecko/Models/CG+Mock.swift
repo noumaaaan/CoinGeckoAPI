@@ -1,6 +1,6 @@
 import Foundation
 
-struct CGCoinMock {
+struct CGMock {
     
     // CGCoin
     let bitcoin: CGCoin = .init(
@@ -50,4 +50,61 @@ struct CGCoinMock {
         volume24H: 66225564581.36339,
         updatedAt: "2024-04-18T20:05:46.971Z"
     )
+    
+    // TrendingCoin
+    let trendingCoin: TrendingCoin = .init(
+        item: .init(
+            id: "gala",
+            coinID: 12493,
+            name: "GALA",
+            symbol: "GALA",
+            marketCapRank: 60,
+            thumb: "https://assets.coingecko.com/coins/images/12493/standard/GALA_token_image_-_200PNG.png?170972586",
+            slug: "gala",
+            score: 0,
+            data: .init(
+                price: 0.04461295133555427,
+                marketCap: "$1,678,617,772",
+                totalVolume: "$136,864,483",
+                sparkline: "https://www.coingecko.com/coins/12493/sparkline.svg",
+                content: .init(
+                    title: "What is GALA?",
+                    description: "Gala is a blockchain gaming ecosystem. Gamers can explore different type of games and have their experiences interact across each other on the Gala platform. The GALA token is the utility token and primary medium of exchange of the ecosystem. Game items are represented as NFTs on the Ethereum blockchain and users can trade them on all marketplaces."
+                )
+            )
+        )
+    )
+    
+    // TrendingNFT
+    let trendingNFT: TrendingNFT = .init(
+        id: "nodemonkes",
+        name: "NodeMonkes",
+        symbol: "NODEMONKES",
+        thumb: "https://assets.coingecko.com/nft_contracts/images/3872/standard/nodemonkes.jpg?1707290228",
+        nftContractID: 3872,
+        nativeCurrencySymbol: "btc",
+        data: .init(
+            floorPrice: "0.44 BTC",
+            floorPriceInUsd24HPercentageChange: "22.5684915948739",
+            h24Volume: "11.62 BTC",
+            h24AverageSalePrice: "0.42 BTC",
+            sparkline: "https://www.coingecko.com/nft/3872/sparkline.svg"
+        )
+    )
+    
+    // TrendingCategory
+    let trendingCategory: TrendingCategory = .init(
+        id: 231,
+        name: "DWF Labs Portfolio",
+        marketCap1HChange: 1.8384113300685303,
+        slug: "dwf-labs-portfolio",
+        coinsCount: 157,
+        data: .init(
+            marketCap: 59234369786.68431,
+            totalVolume: 3164690252.961765,
+            sparkline: "https://www.coingecko.com/categories/25689563/sparkline.svg"
+        )
+    )
 }
+
+

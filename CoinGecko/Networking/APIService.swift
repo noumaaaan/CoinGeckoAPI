@@ -39,4 +39,19 @@ class APIService {
         }
     }
     
+    func fetchTrendingData() async throws -> CGTrending {
+        let urlString = "\(baseURL)search/trending\(apiKeyURL)"
+        guard let url = URL(string: urlString) else { throw CGErorr.invalidURL }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw CGErorr.invalidResponse }
+         
+        do {
+            let trending = try JSONDecoder().decode(CGTrending.self, from: data)
+            return trending
+        } catch {
+            throw CGErorr.apiError
+        }
+    }
+    
 }

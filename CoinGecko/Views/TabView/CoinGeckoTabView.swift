@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CGTabView: View {
+struct CoinGeckoTabView: View {
     
     var body: some View {
         TabView {
@@ -33,5 +33,5 @@ struct CGTabView: View {
 }
 
 #Preview {
-    CGTabView()
+    CoinGeckoTabView()
 }

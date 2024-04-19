@@ -20,5 +20,5 @@ struct LogoView: View {
 }
 
 #Preview {
-    LogoView(urlString: CGCoinMock().bitcoin.image, width: 60, height: 60)
+    LogoView(urlString: CGMock().bitcoin.image, width: 60, height: 60)
 }

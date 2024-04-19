@@ -83,5 +83,5 @@ extension CategoryView {
 
 
 #Preview {
-    CategoryView(category: CGCoinMock().layer1)
+    CategoryView(category: CGMock().layer1)
 }

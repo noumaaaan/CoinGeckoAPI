@@ -63,5 +63,5 @@ extension CoinDetailView {
 }
 
 #Preview {
-    CoinDetailView(coin: CGCoinMock().bitcoin)
+    CoinDetailView(coin: CGMock().bitcoin)
 }
