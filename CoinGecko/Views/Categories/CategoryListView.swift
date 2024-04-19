@@ -17,7 +17,7 @@ struct CategoriyListView: View {
             .navigationTitle("Categories")
             .toolbarTitleDisplayMode(.inlineLarge)
             .refreshable {
-                viewModel.refreshCategoriesList()
+                viewModel.loadData()
             }
             .onReceive(viewModel.$error, perform: { error in
                 if error != nil {
@@ -41,11 +41,6 @@ extension CategoriyListView {
         LazyVStack {
             ForEach(viewModel.categories, id: \.self) { category in
                 CategoryView(category: category)
-                    .onAppear {
-                        if viewModel.categories.last == category {
-                            viewModel.loadData()
-                        }
-                    }
             }
         }
         .padding(.top, Constants.Layout.vStackPadding)

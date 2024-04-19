@@ -4,13 +4,17 @@ class APIService {
     
     private let baseURL = "https://api.coingecko.com/api/v3/"
     private let apiKeyURL = "?x_cg_demo_api_key=\(Configuration().apiKey)"
+    private let currency = "?vs_currency=GBP"
+    private let timeframe = "&price_change_percentage=1h%2C24h%2C7d%2C30d"
+    
     private let itemsPerPage = 10
     var coinsPage = 0
     
     func fetchMarketCoins() async throws -> [CGCoin] {
         coinsPage += 1
         
-        let urlString = "\(baseURL)coins/markets?vs_currency=GBP&price_change_percentage=1h%2C24h%2C7d%2C30d&per_page=\(itemsPerPage)&page=\(coinsPage)\(apiKeyURL)"
+        var urlString = "\(baseURL)coins/markets\(currency)\(timeframe)&per_page=\(itemsPerPage)&page=\(coinsPage)\(apiKeyURL)"
+        
         guard let url = URL(string: urlString) else { throw CGErorr.invalidURL }
         
         let (data, response) = try await URLSession.shared.data(from: url)

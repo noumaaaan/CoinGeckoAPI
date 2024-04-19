@@ -26,10 +26,4 @@ final class CoinListViewModel: ObservableObject {
         apiService.coinsPage = 0
         loadData()
     }
-    
-    @MainActor
-    func toggleSorting() {
-        sorting.toggle()
-        refreshCoinsList()
-    }
 }

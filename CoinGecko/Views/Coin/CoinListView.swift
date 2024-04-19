@@ -16,7 +16,7 @@ struct CoinListView: View {
             ScrollView {
                 content
             }
-            .navigationTitle("Coins")
+            .navigationTitle("Coins by market cap")
             .toolbarTitleDisplayMode(.inlineLarge)
             .refreshable {
                 viewModel.refreshCoinsList()

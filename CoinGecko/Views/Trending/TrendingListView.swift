@@ -31,7 +31,7 @@ struct TrendingListView: View {
             .navigationTitle("Trending")
             .toolbarTitleDisplayMode(.inlineLarge)
             .refreshable {
-                viewModel.refreshCoinsList()
+                viewModel.loadData()
             }
             .onReceive(viewModel.$error, perform: { error in
                 if error != nil {

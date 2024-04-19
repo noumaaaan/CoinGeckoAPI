@@ -17,9 +17,4 @@ final class TrendingListViewModel: ObservableObject {
             }
         }
     }
-    
-    @MainActor
-    func refreshCoinsList() {
-        loadData()
-    }
 }

@@ -17,10 +17,4 @@ final class CategoryListViewModel: ObservableObject {
             }
         }
     }
-    
-    @MainActor
-    func refreshCategoriesList() {
-        self.categories.removeAll()
-        loadData()
-    }
 }
