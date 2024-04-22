@@ -19,7 +19,7 @@ struct CoinGeckoTabView: View {
                     Label("Categories", systemImage: "list.bullet.rectangle")
                 }
             
-            ExchangesListView()
+            ExchangeListView()
                 .tabItem {
                     Label("Exchanges", systemImage: "creditcard")
                 }

@@ -13,7 +13,7 @@ class APIService {
     func fetchMarketCoins() async throws -> [CGCoin] {
         coinsPage += 1
         
-        var urlString = "\(baseURL)coins/markets\(currency)\(timeframe)&per_page=\(itemsPerPage)&page=\(coinsPage)\(apiKeyURL)"
+        let urlString = "\(baseURL)coins/markets\(currency)\(timeframe)&per_page=\(itemsPerPage)&page=\(coinsPage)\(apiKeyURL)"
         
         guard let url = URL(string: urlString) else { throw CGErorr.invalidURL }
         
@@ -53,6 +53,21 @@ class APIService {
         do {
             let trending = try JSONDecoder().decode(CGTrending.self, from: data)
             return trending
+        } catch {
+            throw CGErorr.apiError
+        }
+    }
+    
+    func fetchExchanges() async throws -> [CGExchange] {
+        let urlString = "\(baseURL)exchanges\(apiKeyURL)"
+        guard let url = URL(string: urlString) else { throw CGErorr.invalidURL }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw CGErorr.invalidResponse }
+         
+        do {
+            let exchanges = try JSONDecoder().decode([CGExchange].self, from: data)
+            return exchanges
         } catch {
             throw CGErorr.apiError
         }

@@ -28,7 +28,7 @@
 		8CF8021E2BD0C03B00EC8586 /* CoinGeckoTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8021D2BD0C03B00EC8586 /* CoinGeckoTabView.swift */; };
 		8CF802222BD0CB2700EC8586 /* CGTimeframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802212BD0CB2700EC8586 /* CGTimeframe.swift */; };
 		8CF802272BD0DF1F00EC8586 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802262BD0DF1F00EC8586 /* CategoryListView.swift */; };
-		8CF802292BD0DF2800EC8586 /* ExchangesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802282BD0DF2800EC8586 /* ExchangesListView.swift */; };
+		8CF802292BD0DF2800EC8586 /* ExchangeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802282BD0DF2800EC8586 /* ExchangeListView.swift */; };
 		8CF8022B2BD0DFCB00EC8586 /* TrendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8022A2BD0DFCB00EC8586 /* TrendingListView.swift */; };
 		8CF8022D2BD0E32000EC8586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF8022C2BD0E32000EC8586 /* LaunchScreen.storyboard */; };
 		8CF802342BD0E85E00EC8586 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802332BD0E85E00EC8586 /* CategoryView.swift */; };
@@ -40,6 +40,9 @@
 		8CF802452BD1F13C00EC8586 /* TrendingList+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802442BD1F13C00EC8586 /* TrendingList+ViewModel.swift */; };
 		8CF802472BD1FB2500EC8586 /* TrendingNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802462BD1FB2500EC8586 /* TrendingNFTView.swift */; };
 		8CF802492BD1FF0600EC8586 /* TrendingCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802482BD1FF0600EC8586 /* TrendingCategoryView.swift */; };
+		8CF8024B2BD7026000EC8586 /* CGExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8024A2BD7026000EC8586 /* CGExchange.swift */; };
+		8CF8024D2BD702FB00EC8586 /* ExchangeList+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8024C2BD702FB00EC8586 /* ExchangeList+ViewModel.swift */; };
+		8CF8024F2BD7034700EC8586 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8024E2BD7034700EC8586 /* ExchangeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +87,7 @@
 		8CF8021D2BD0C03B00EC8586 /* CoinGeckoTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoTabView.swift; sourceTree = "<group>"; };
 		8CF802212BD0CB2700EC8586 /* CGTimeframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTimeframe.swift; sourceTree = "<group>"; };
 		8CF802262BD0DF1F00EC8586 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
-		8CF802282BD0DF2800EC8586 /* ExchangesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesListView.swift; sourceTree = "<group>"; };
+		8CF802282BD0DF2800EC8586 /* ExchangeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeListView.swift; sourceTree = "<group>"; };
 		8CF8022A2BD0DFCB00EC8586 /* TrendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListView.swift; sourceTree = "<group>"; };
 		8CF8022C2BD0E32000EC8586 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CF802332BD0E85E00EC8586 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -96,6 +99,9 @@
 		8CF802442BD1F13C00EC8586 /* TrendingList+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrendingList+ViewModel.swift"; sourceTree = "<group>"; };
 		8CF802462BD1FB2500EC8586 /* TrendingNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingNFTView.swift; sourceTree = "<group>"; };
 		8CF802482BD1FF0600EC8586 /* TrendingCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCategoryView.swift; sourceTree = "<group>"; };
+		8CF8024A2BD7026000EC8586 /* CGExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGExchange.swift; sourceTree = "<group>"; };
+		8CF8024C2BD702FB00EC8586 /* ExchangeList+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExchangeList+ViewModel.swift"; sourceTree = "<group>"; };
+		8CF8024E2BD7034700EC8586 /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +196,7 @@
 				8CF802032BCB84D400EC8586 /* CGCoin.swift */,
 				8CF8023A2BD1B60300EC8586 /* CGCateogry.swift */,
 				8CF802402BD1D91300EC8586 /* CGTrending.swift */,
+				8CF8024A2BD7026000EC8586 /* CGExchange.swift */,
 				8CF8020C2BCB859F00EC8586 /* CG+Mock.swift */,
 			);
 			path = Models;
@@ -226,6 +233,7 @@
 			children = (
 				8CF8020E2BCC043700EC8586 /* CoinList+ViewModel.swift */,
 				8CF8023C2BD1BBDB00EC8586 /* CategoryList+ViewModel.swift */,
+				8CF8024C2BD702FB00EC8586 /* ExchangeList+ViewModel.swift */,
 				8CF802442BD1F13C00EC8586 /* TrendingList+ViewModel.swift */,
 			);
 			path = ViewModels;
@@ -296,7 +304,8 @@
 		8CF802322BD0E7FB00EC8586 /* Exchanges */ = {
 			isa = PBXGroup;
 			children = (
-				8CF802282BD0DF2800EC8586 /* ExchangesListView.swift */,
+				8CF802282BD0DF2800EC8586 /* ExchangeListView.swift */,
+				8CF8024E2BD7034700EC8586 /* ExchangeView.swift */,
 			);
 			path = Exchanges;
 			sourceTree = "<group>";
@@ -443,7 +452,8 @@
 				8CF802432BD1DCE700EC8586 /* TrendingCoinView.swift in Sources */,
 				8CF802272BD0DF1F00EC8586 /* CategoryListView.swift in Sources */,
 				8CF802472BD1FB2500EC8586 /* TrendingNFTView.swift in Sources */,
-				8CF802292BD0DF2800EC8586 /* ExchangesListView.swift in Sources */,
+				8CF802292BD0DF2800EC8586 /* ExchangeListView.swift in Sources */,
+				8CF8024B2BD7026000EC8586 /* CGExchange.swift in Sources */,
 				8CF802222BD0CB2700EC8586 /* CGTimeframe.swift in Sources */,
 				8CF8022B2BD0DFCB00EC8586 /* TrendingListView.swift in Sources */,
 				8CF802392BD0E8DA00EC8586 /* AboutView.swift in Sources */,
@@ -451,6 +461,8 @@
 				8CF802342BD0E85E00EC8586 /* CategoryView.swift in Sources */,
 				8CF802192BD0B83000EC8586 /* LogoView.swift in Sources */,
 				8CF8020B2BCB856600EC8586 /* CoinView.swift in Sources */,
+				8CF8024D2BD702FB00EC8586 /* ExchangeList+ViewModel.swift in Sources */,
+				8CF8024F2BD7034700EC8586 /* ExchangeView.swift in Sources */,
 				8CF802172BD0B05200EC8586 /* CoinDetailView.swift in Sources */,
 				8CF802492BD1FF0600EC8586 /* TrendingCategoryView.swift in Sources */,
 				8CF8021E2BD0C03B00EC8586 /* CoinGeckoTabView.swift in Sources */,
