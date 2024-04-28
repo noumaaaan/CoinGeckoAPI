@@ -1,19 +1,22 @@
 import Foundation
 
+@MainActor
 final class CategoryListViewModel: ObservableObject {
     @Published var categories: [CGCategory] = []
     @Published var error: Error?
     
-    var apiService = APIService()
+    init() {
+        fetchCategories()
+    }
     
-    @MainActor
-    func loadData() {
+    func fetchCategories() {
         Task {
-            do {
-                let categories = try await apiService.fetchMarketCategories()
-                self.categories.append(contentsOf: categories)
-            } catch {
-                self.error = error
+            let result = await APIService().fetchCategories()
+            switch result {
+            case .success(let success):
+                self.categories = success
+            case .failure(let failure):
+                self.error = failure
             }
         }
     }

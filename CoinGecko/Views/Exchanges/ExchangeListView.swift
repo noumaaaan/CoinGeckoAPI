@@ -30,9 +30,9 @@ struct ExchangeListView: View {
                 Text(viewModel.error?.localizedDescription ?? "")
             }
         }
-        .task {
-            viewModel.loadData()
-        }
+//        .task {
+//            viewModel.loadData()
+//        }
     }
 }
 

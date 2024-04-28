@@ -1,76 +1,53 @@
 import Foundation
 
-class APIService {
+final class APIService {
     
-    private let baseURL = "https://api.coingecko.com/api/v3/"
-    private let apiKeyURL = "?x_cg_demo_api_key=\(Configuration().apiKey)"
-    private let currency = "?vs_currency=GBP"
-    private let timeframe = "&price_change_percentage=1h%2C24h%2C7d%2C30d"
-    
-    private let itemsPerPage = 10
-    var coinsPage = 0
-    
-    func fetchMarketCoins() async throws -> [CGCoin] {
-        coinsPage += 1
-        
-        let urlString = "\(baseURL)coins/markets\(currency)\(timeframe)&per_page=\(itemsPerPage)&page=\(coinsPage)\(apiKeyURL)"
-        
-        guard let url = URL(string: urlString) else { throw CGErorr.invalidURL }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw CGErorr.invalidResponse }
-         
-        do {
-            let coins = try JSONDecoder().decode([CGCoin].self, from: data)
-            return coins
-        } catch {
-            throw CGErorr.apiError
-        }
+    func fetchCoins(page: Int) async -> Result<[CGCoin], CGErorr> {
+        return await request(endpoint: .fetchCoins(page: page), responseModel: [CGCoin].self)
     }
     
-    func fetchMarketCategories() async throws -> [CGCategory] {
-        let urlString = "\(baseURL)coins/categories\(apiKeyURL)"
-        guard let url = URL(string: urlString) else { throw CGErorr.invalidURL }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw CGErorr.invalidResponse }
-         
-        do {
-            let categories = try JSONDecoder().decode([CGCategory].self, from: data)
-            return categories
-        } catch {
-            throw CGErorr.apiError
-        }
+    func fetchCategories() async -> Result<[CGCategory], CGErorr> {
+        return await request(endpoint: .fetchCategories, responseModel: [CGCategory].self)
     }
     
-    func fetchTrendingData() async throws -> CGTrending {
-        let urlString = "\(baseURL)search/trending\(apiKeyURL)"
-        guard let url = URL(string: urlString) else { throw CGErorr.invalidURL }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw CGErorr.invalidResponse }
-         
-        do {
-            let trending = try JSONDecoder().decode(CGTrending.self, from: data)
-            return trending
-        } catch {
-            throw CGErorr.apiError
-        }
+    func fetchTrending() async -> Result<CGTrending, CGErorr> {
+        return await request(endpoint: .fetchTrending, responseModel: CGTrending.self)
     }
     
-    func fetchExchanges() async throws -> [CGExchange] {
-        let urlString = "\(baseURL)exchanges\(apiKeyURL)"
-        guard let url = URL(string: urlString) else { throw CGErorr.invalidURL }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw CGErorr.invalidResponse }
-         
-        do {
-            let exchanges = try JSONDecoder().decode([CGExchange].self, from: data)
-            return exchanges
-        } catch {
-            throw CGErorr.apiError
-        }
+    func fetchExchanges() async -> Result<[CGExchange], CGErorr> {
+        return await request(endpoint: .fetchExchanges, responseModel: [CGExchange].self)
     }
     
+    func request<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, CGErorr> {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = endpoint.scheme
+        urlComponents.host = endpoint.host
+        urlComponents.path = endpoint.path
+        urlComponents.queryItems = endpoint.parameters
+        
+        guard let url = urlComponents.url else {
+            return .failure(.invalidURL)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = endpoint.method.rawValue
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
+            guard let response = response as? HTTPURLResponse else {
+                return .failure(.invalidResponse)
+            }
+            switch response.statusCode {
+            case 200...299:
+                guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
+                    return .failure(.apiError)
+                }
+                return .success(decodedResponse)
+            default:
+                return .failure(.invalidResponse)
+            }
+        } catch {
+            return .failure(.unknown(error))
+        }
+    }
 }

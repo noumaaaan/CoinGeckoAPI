@@ -1,19 +1,22 @@
 import Foundation
 
+@MainActor
 final class TrendingListViewModel: ObservableObject {
     @Published var trending: CGTrending = .init(coins: [], nfts: [], categories: [])
     @Published var error: Error?
     
-    var apiService = APIService()
+    init() {
+        fetchTrending()
+    }
     
-    @MainActor
-    func loadData() {
+    func fetchTrending() {
         Task {
-            do {
-                let trending = try await apiService.fetchTrendingData()
-                self.trending = trending
-            } catch {
-                self.error = error
+            let result = await APIService().fetchTrending()
+            switch result {
+            case .success(let success):
+                self.trending = success
+            case .failure(let failure):
+                self.error = failure
             }
         }
     }

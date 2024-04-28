@@ -16,9 +16,9 @@ struct CategoriyListView: View {
             }
             .navigationTitle("Categories")
             .toolbarTitleDisplayMode(.inlineLarge)
-            .refreshable {
-                viewModel.loadData()
-            }
+//            .refreshable {
+//                viewModel.loadData()
+//            }
             .onReceive(viewModel.$error, perform: { error in
                 if error != nil {
                     showAlert.toggle()
@@ -29,9 +29,9 @@ struct CategoriyListView: View {
             } message: {
                 Text(viewModel.error?.localizedDescription ?? "")
             }
-            .task {
-                viewModel.loadData()
-            }
+//            .task {
+//                viewModel.loadData()
+//            }
         }
     }
 }

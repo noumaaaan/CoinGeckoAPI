@@ -1,19 +1,22 @@
 import Foundation
 
+@MainActor
 final class ExchangeListViewModel: ObservableObject {
     @Published var exchanges: [CGExchange] = []
     @Published var error: Error?
     
-    var apiService = APIService()
+    init() {
+        fetchExchanges()
+    }
     
-    @MainActor
-    func loadData() {
+    func fetchExchanges() {
         Task {
-            do {
-                let exchanges = try await apiService.fetchExchanges()
-                self.exchanges = exchanges
-            } catch {
-                self.error = error
+            let result = await APIService().fetchExchanges()
+            switch result {
+            case .success(let success):
+                self.exchanges = success
+            case .failure(let failure):
+                self.error = failure
             }
         }
     }

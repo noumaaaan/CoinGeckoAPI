@@ -1,29 +1,32 @@
 import Foundation
 
+@MainActor
 final class CoinListViewModel: ObservableObject {
     @Published var coins: [CGCoin] = []
     @Published var error: Error?
     @Published var selectedTimeframe: CGTimeframe = .oneDay
     
-    var sorting: CGSort = .marketCapDesc
-    var apiService = APIService()
+    var page = 1
     
-    @MainActor
-    func loadData() {
+    init() {
+        fetchCoins(page: page)
+    }
+    
+    func fetchCoins(page: Int) {
         Task {
-            do {
-                let coins = try await apiService.fetchMarketCoins()
-                self.coins.append(contentsOf: coins)
-            } catch {
-                self.error = error
+            let result = await APIService().fetchCoins(page: page)
+            switch result {
+            case .success(let success):
+                self.coins = success
+            case .failure(let failure):
+                self.error = failure
             }
         }
     }
     
-    @MainActor
     func refreshCoinsList() {
-        self.coins.removeAll()
-        apiService.coinsPage = 0
-        loadData()
+        coins.removeAll()
+        page = 1
+        fetchCoins(page: page)
     }
 }

@@ -18,9 +18,9 @@ struct CoinListView: View {
             }
             .navigationTitle("Coins by market cap")
             .toolbarTitleDisplayMode(.inlineLarge)
-            .refreshable {
-                viewModel.refreshCoinsList()
-            }
+//            .refreshable {
+//                viewModel.refreshCoinsList()
+//            }
             .onReceive(viewModel.$error, perform: { error in
                 if error != nil {
                     showAlert.toggle()
@@ -33,7 +33,7 @@ struct CoinListView: View {
             }
         }
         .task {
-            viewModel.loadData()
+//            viewModel.fetchCoins()
         }
     }
 }
@@ -57,11 +57,11 @@ extension CoinListView {
                     CoinDetailView(coin: coin)
                 } label: {
                     CoinView(coin: coin, timeframe: viewModel.selectedTimeframe)
-                        .onAppear {
-                            if viewModel.coins.last == coin {
-                                viewModel.loadData()
-                            }
-                        }
+//                        .onAppear {
+//                            if viewModel.coins.last == coin {
+//                                viewModel.loadData()
+//                            }
+//                        }
                 }
             }
         }
