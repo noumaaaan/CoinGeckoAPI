@@ -17,7 +17,8 @@ final class CoinListViewModel: ObservableObject {
             let result = await APIService().fetchCoins(page: page)
             switch result {
             case .success(let success):
-                self.coins = success
+                self.coins.append(contentsOf: success)
+                
             case .failure(let failure):
                 self.error = failure
             }
@@ -27,6 +28,11 @@ final class CoinListViewModel: ObservableObject {
     func refreshCoinsList() {
         coins.removeAll()
         page = 1
+        fetchCoins(page: page)
+    }
+    
+    func loadNextPage() {
+        page += 1
         fetchCoins(page: page)
     }
 }
