@@ -16,10 +16,10 @@ extension Endpoint {
         "api.coingecko.com"
     }
     
-    var method: RequestMethod {
+    var method: String {
         switch self {
         case .fetchTrending, .fetchCoins, .fetchCategories, .fetchExchanges:
-            return .get
+            return "GET"
         }
     }
     

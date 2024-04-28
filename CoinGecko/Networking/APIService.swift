@@ -30,7 +30,7 @@ final class APIService {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = endpoint.method.rawValue
+        request.httpMethod = endpoint.method
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)

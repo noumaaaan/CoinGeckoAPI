@@ -44,7 +44,6 @@
 		8CF8024D2BD702FB00EC8586 /* ExchangeList+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8024C2BD702FB00EC8586 /* ExchangeList+ViewModel.swift */; };
 		8CF8024F2BD7034700EC8586 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF8024E2BD7034700EC8586 /* ExchangeView.swift */; };
 		8CF802512BD74C4800EC8586 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802502BD74C4800EC8586 /* Endpoint.swift */; };
-		8CF802552BDDB09000EC8586 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF802542BDDB09000EC8586 /* RequestMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +104,6 @@
 		8CF8024C2BD702FB00EC8586 /* ExchangeList+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExchangeList+ViewModel.swift"; sourceTree = "<group>"; };
 		8CF8024E2BD7034700EC8586 /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 		8CF802502BD74C4800EC8586 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		8CF802542BDDB09000EC8586 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +223,6 @@
 			children = (
 				8CF802012BCB827700EC8586 /* APIService.swift */,
 				8CF802502BD74C4800EC8586 /* Endpoint.swift */,
-				8CF802542BDDB09000EC8586 /* RequestMethod.swift */,
 				8CF802122BCCAA3D00EC8586 /* CGSort.swift */,
 				8CF802102BCC0FA800EC8586 /* CGError.swift */,
 				8CF802212BD0CB2700EC8586 /* CGTimeframe.swift */,
@@ -470,7 +467,6 @@
 				8CF8020B2BCB856600EC8586 /* CoinView.swift in Sources */,
 				8CF8024D2BD702FB00EC8586 /* ExchangeList+ViewModel.swift in Sources */,
 				8CF8024F2BD7034700EC8586 /* ExchangeView.swift in Sources */,
-				8CF802552BDDB09000EC8586 /* RequestMethod.swift in Sources */,
 				8CF802172BD0B05200EC8586 /* CoinDetailView.swift in Sources */,
 				8CF802492BD1FF0600EC8586 /* TrendingCategoryView.swift in Sources */,
 				8CF8021E2BD0C03B00EC8586 /* CoinGeckoTabView.swift in Sources */,
