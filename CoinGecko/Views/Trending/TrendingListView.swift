@@ -30,9 +30,9 @@ struct TrendingListView: View {
             }
             .navigationTitle("Trending")
             .toolbarTitleDisplayMode(.inlineLarge)
-//            .refreshable {
-//                viewModel.loadData()
-//            }
+            .refreshable {
+                viewModel.refreshTrendingData()
+            }
             .onReceive(viewModel.$error, perform: { error in
                 if error != nil {
                     showAlert.toggle()
@@ -44,9 +44,6 @@ struct TrendingListView: View {
                 Text(viewModel.error?.localizedDescription ?? "")
             }
         }
-//        .task {
-//            viewModel.loadData()
-//        }
     }
 }
 
@@ -66,9 +63,11 @@ extension TrendingListView {
                 }
             }
             .padding(.vertical, Constants.Layout.vStackPadding)
+            .scrollTargetLayout()
         }
         .scrollIndicators(.hidden)
         .fixedSize(horizontal: false, vertical: true)
+        .scrollTargetBehavior(.viewAligned)
     }
     
     var nftContent: some View {
@@ -79,9 +78,11 @@ extension TrendingListView {
                 }
             }
             .padding(.vertical, Constants.Layout.vStackPadding)
+            .scrollTargetLayout()
         }
         .scrollIndicators(.hidden)
         .fixedSize(horizontal: false, vertical: true)
+        .scrollTargetBehavior(.viewAligned)
     }
     
     var categoryContent: some View {
@@ -92,9 +93,11 @@ extension TrendingListView {
                 }
             }
             .padding(.vertical, Constants.Layout.vStackPadding)
+            .scrollTargetLayout()
         }
         .scrollIndicators(.hidden)
         .fixedSize(horizontal: false, vertical: true)
+        .scrollTargetBehavior(.viewAligned)
     }
 }
 

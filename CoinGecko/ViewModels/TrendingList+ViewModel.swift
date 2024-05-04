@@ -20,4 +20,8 @@ final class TrendingListViewModel: ObservableObject {
             }
         }
     }
+    
+    func refreshTrendingData() {
+        fetchTrending()
+    }
 }
