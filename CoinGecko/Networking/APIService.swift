@@ -2,8 +2,8 @@ import Foundation
 
 final class APIService {
     
-    func fetchCoins(page: Int) async -> Result<[CGCoin], CGErorr> {
-        return await request(endpoint: .fetchCoins(page: page), responseModel: [CGCoin].self)
+    func fetchCoins(page: Int, id: String? = nil) async -> Result<[CGCoin], CGErorr> {
+        return await request(endpoint: .fetchCoins(page: page, id: id), responseModel: [CGCoin].self)
     }
     
     func fetchCategories() async -> Result<[CGCategory], CGErorr> {

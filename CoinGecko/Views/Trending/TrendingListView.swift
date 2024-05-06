@@ -59,7 +59,14 @@ extension TrendingListView {
         ScrollView(.horizontal) {
             LazyHStack(spacing: .zero) {
                 ForEach(viewModel.trending.coins, id: \.self) { coin in
-                    TrendingCoinView(trendingCoin: coin)
+                    
+                    NavigationLink {
+//                        CoinDetailView(coin: coin)
+//                        CoinDetailView(coin: coin)
+                        Color.red
+                    } label: {
+                        TrendingCoinView(trendingCoin: coin)
+                    }
                 }
             }
             .padding(.vertical, Constants.Layout.vStackPadding)

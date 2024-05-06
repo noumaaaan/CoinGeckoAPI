@@ -2,7 +2,7 @@ import Foundation
 
 enum Endpoint {
     case fetchTrending
-    case fetchCoins(page: Int)
+    case fetchCoins(page: Int, id: String?)
     case fetchCategories
     case fetchExchanges
 }
@@ -40,11 +40,14 @@ extension Endpoint {
         var queryItems = [URLQueryItem]()
         
         switch self {
-        case .fetchCoins(let page):
+        case .fetchCoins(let page, let id):
             queryItems.append(.init(name: "vs_currency", value: "GBP"))
             queryItems.append(.init(name: "price_change_percentage", value: "1h,24h,7d,30d"))
             queryItems.append(.init(name: "per_page", value: "15"))
             queryItems.append(.init(name: "page", value: String(page)))
+            if let id = id {
+                queryItems.append(.init(name: "ids", value: id))
+            }
 
         default:
             return nil
